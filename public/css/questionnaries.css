@@ -1,0 +1,44 @@
+.questionnaries {
+    border: 1px solid black;
+    padding: 20px 5px 20px 5px;
+    background-color: lightgrey;
+    min-width: 700px;
+}
+.questionnaries h3 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.questionnaries th {
+    font-weight: bold;
+}
+.questionnaries table  {
+    width: 100%;
+    margin: 25px 5px 50px 5px;
+    border-collapse: collapse;
+}
+.questionnaries td  {
+    font-size: 20px;
+}
+.questionnaries td > *  {
+    font-size: 20px;
+    width: 500px;
+}
+.add-remarks table tr {
+    padding-bottom: 10px;
+}
+/* view ques */
+.view-question td, .view-question th, .view-question tr {
+    border: 1px solid black;
+}
+.view-question tr {
+    background-color: #98a2ad;
+}
+.view-question tr:nth-child(even) {
+    background-color: #cfd1d3;
+}
+.view-question p {
+    display: inline;
+    margin-right: 80px;
+    padding-top: 30px;
+}

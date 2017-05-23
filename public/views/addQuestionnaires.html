@@ -1,0 +1,28 @@
+<div class="questionnaries add-question">
+    
+    <h3>Add Questions</h3>
+    <table>
+        <tr>
+            <td>Patient Name</td>
+            <td> : </td>
+            <td><input type="text" ng-model="patient.name" disabled/></td>
+        </tr>
+        <tr>
+            <td>Patient HIN</td>
+            <td> : </td>
+            <td><input type="text" ng-model="patient.HIN" />{{patient.HIN}}</td>
+        </tr>
+        <tr>
+            <td>Question</td>
+            <td> : </td>
+            <td><textarea rows="2" ng-model="patient.question"></textarea></td>
+        </tr>
+        <tr>
+            <td>Answer</td>
+            <td> : </td>
+            <td><textarea rows="5" ng-model="patient.answer"></textarea></td>
+        </tr>
+    </table>
+    <input class="submit-button" ng-click="submit()" type="submit" value="Add Question">
+    <br> <h5>{{alert}}</h5>
+</div>

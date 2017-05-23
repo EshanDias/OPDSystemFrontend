@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="../css/questionnaries.css">
+<div class="questionnaries view-question">
+    <h3>View Questions</h3>
+    <p style="display: block; padding-top:0">Patient Name : <input type="text" ></p>
+    <p style="display: block; padding-top:0"ng-model="patient.HIN">Patient HIN : <input type="text" ></p>
+    <p style="margin-right: 10px">Search :- </p>
+    <p>Start Date : <input type="date" name="startdate" ng-model="startdate"></P>
+    <p>End Date : <input type="date" name="enddate" ng-model="enddate"></p>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Question</th>
+            <th>Answer</th>
+            <th>HIN</th>
+        </tr>
+        <tr ng-repeat="x in questions">
+            <td>{{x.date}}</td>
+            <td>{{x.question}}</td>
+            <td>{{x.answer}}</td>
+            <td>{{x.HIN}}</td>
+        </tr>
+        <tr>
+            <button ng-click="search()">view</button>
+        </tr>
+    </table>
+
+    start : {{startdate}} end : {{enddate}}
+</div>

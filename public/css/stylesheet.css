@@ -1,0 +1,141 @@
+HTML, body {
+    height: 100%;
+    min-width: 750px;
+}
+/* Main Menu */
+.side-panel {
+    background-color: #071326;
+    color: white;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    overflow-x: hidden;
+    transition: 0.1s;
+}
+.side-panel-show {
+    width: 250px;
+}
+.side-panel-hide {
+    width: 0;
+}
+.unstyled-list {
+    padding: 0;
+    margin: 0;
+}
+.unstyled-list li{
+    list-style: none;
+}
+.unstyled-list li a {
+    display: block;
+    text-decoration: none;
+    border-bottom:1px solid #ececec;
+    color: #45597a;
+}
+.unstyled-list li a:hover {
+    color: #ffffff;
+}
+.level-1 a {
+    background-color: #071326;
+    padding: 10px 10px 10px 40px;
+    font-size: 25px;
+}
+.level-1 a:hover, .level-1 a:active {
+    background-color: #98a2ad;
+}
+.level1-menu {
+    cursor: pointer;
+}
+.level-2 a {
+    font-size: 20px;
+    padding: 10px 10px 10px 65px;
+    background-color: #070b17;
+}
+.level-2 a:hover {
+    background-color: #98a2ad;
+}
+.level2-container {
+    display: none;
+}
+/* Profile Picture */
+#profilePicture {
+    min-height: 155px;
+}
+#profilePicture img {
+    background-color: #071326;
+    height: 100px;
+    width: 100px;
+    margin: 25px 75pt 25pt 75px;
+
+}
+#profilePicture p {
+    text-align: center;
+    font-size: 12px;
+}
+/* User Account Information */
+.account button {
+    background-color: #cfd1d3;
+    width: 80px;
+    color: black;
+    padding: 5px;
+    margin: 5px 20px 10px 20px;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+}
+.account button:focus {
+    outline: 0;
+}
+.account button:hover {
+    background-color: #ffffff;
+    colour: #ffffff;
+}
+/* Header (the page name & the menu button) */
+.header-css {
+    display: inline;
+    width: 100%;
+    min-width: 450px;
+    background-color: #071326;
+    color: white;
+    text-align: center;
+    top: 0;
+    min-height: 70px;
+    max-height: 70px;
+    margin: 0;
+    position: fixed;
+}
+.header-css img {
+    height: 40px;
+    width: 60px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    cursor: pointer;
+}
+.header-css h2 {
+    top: 10px;
+    display: inline;
+    text-align: center;
+    position: relative;
+}
+/* We will be coding inside this main*/
+#main {
+    transition: margin-left 0.1s;
+    top: 70px;
+    position: absolute;
+}
+/* SUBMIT buttons in the forms */
+.submit-button{
+    margin-left: 50%;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #314668;
+    color: gray;
+    outline: none;
+}
+.submit-button:hover,.submit-button:active {
+    color: white;
+    background-color: blue;
+}
