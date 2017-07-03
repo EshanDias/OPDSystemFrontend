@@ -1,0 +1,80 @@
+<div class="container">
+	<h1>My Queue</h1>
+	<div class="row">
+		<div class="col-md-4 col-md-offset-3">
+			<div class="summary-box">
+				<h3 class="summary-title">Summary View</h3>
+				<table class="table">
+					<tbody>
+					<tr>
+						<td>Name </td>
+						<td> : </td>
+						<td>{{doctor.name}}</td>
+					</tr>
+					<tr>
+						<td># of Patients </td>
+						<td> : </td>
+						<td>{{patientCount}}</td>
+					</tr>
+					<tr>
+						<td>Queue Status </td>
+						<td> : </td>
+						<td>{{status}}</td>
+					</tr>
+					<!--<tr>
+						<td># of Treated Patients </td>
+						<td> : </td>
+						<td>1</td>
+					</tr>-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin-top:-10px">
+			<div class="queueCtrl">
+				<h3 class="queueCtrl-title">Queue Controller</h3>
+
+				<input type="button" id="holdBtn" class="btn btn-block btn-primary" ng-click="holdQueue(doctor._id)" ng-disabled="!doctor.availability" value="Hold Queue">
+				<br>
+				<input type="button" id="resumeBtn" class="btn btn-block btn-primary" ng-click="resumeQueue(doctor._id)" ng-disabled="doctor.availability" value="Resume Queue">
+				<br>
+				<!--<input type="button" id="redirectBtn" class="btn btn-block btn-primary" ng-click="redirectQueue(doctor._id)" value="Redirect Queue">-->
+
+			</div>
+		</div>
+	</div>
+	<div class="queueOrder">
+		<h3 class="order-title">Queue Order</h3>
+		<div class="order">
+			<table class="table queueOrder">
+				<tbody>
+				<tr>
+					<td>Name </td>
+					<td> : </td>
+					<td>{{patientName}}</td>
+				</tr>
+				<tr>
+					<td>Patient ID </td>
+					<td> : </td>
+					<td>{{patientID}}</td>
+				</tr>
+				<tr>
+					<td>Queue Number </td>
+					<td> : </td>
+					<td>{{queueNumber}}</td>
+				</tr>
+
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+    <div class="col-md-2" style="height:5px">
+        <a href="myOPD">
+            <button class="btn btn-block btn-primary" ng-click="opd(doctor.name)" value="My OPD">My OPD</button>
+        </a>
+    </div>
+
+
+</div>

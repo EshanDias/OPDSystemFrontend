@@ -1,0 +1,49 @@
+<div class="container">
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>HIN</th>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Civil Status</th>
+            <th>NIC</th>
+            <th>Phone</th>
+            <th>Address</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <td><input class="form-control" ng-model="patient.HIN" ng-keyup="searchByHin(patient.HIN)"></td>
+        <td><input class="form-control" ng-model="patient.name"></td>
+        <td><input class="form-control" ng-model="patient.DOB"></td>
+        <td><input class="form-control" ng-model="patient.gender"></td>
+        <td><input class="form-control" ng-model="patient.civilStatus"></td>
+        <td><input class="form-control" ng-model="patient.NIC"></td>
+        <td><input class="form-control" ng-model="patient.phone"></td>
+        <td><input class="form-control" ng-model="patient.address"></td>
+        <td><button class="btn btn-primary" ng-click="addpatient()">ADD PATIENT</button></td>
+        <td><button class="btn btn-info" ng-click="updatepatient(patient._id)">UPDATE</button></td>
+
+
+
+        <tr ng-repeat = "patient in patientlist">
+            <td>{{patient.HIN}}</td>
+            <td>{{patient.name}}</td>
+            <td>{{patient.DOB}}</td>
+            <td>{{patient.gender}}</td>
+            <td>{{patient.civilStatus}}</td>
+            <td>{{patient.NIC}}</td>
+            <td>{{patient.phone}}</td>
+            <td>{{patient.address}}</td>
+
+            <td><button class="btn btn-danger" ng-click="removePatient(patient._id)">REMOVE</button></td>
+            <td><button class="btn btn-warning" ng-click="edit(patient._id)">EDIT</button></td>
+            <td><a href="patientOverview"><button class="btn btn-info" ng-click="overview(patient)">OVERVIEW</button></a></td>
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>
