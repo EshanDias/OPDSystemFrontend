@@ -51,6 +51,10 @@
             templateUrl: '../views/addDrug.html',
             controller: ''
         })
+        .when('/queuePatients', {
+            templateUrl: '../views/queuePatients.html',
+            controller: 'QueuePatient'
+        })
         .otherwise('/home', {
             templateUrl: '../views/home.html',
         });
