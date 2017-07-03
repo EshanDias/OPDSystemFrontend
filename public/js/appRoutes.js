@@ -31,10 +31,10 @@
             templateUrl: '../views/patientOverview.html',
             controller: 'patientOverview'
         })
-        // .when('/', {
-        //     templateUrl: '../views/viewQuestionnaires.html',
-        //     controller: 'viewQuestionCtrl'
-        // })
+        .when('/queuePatients', {
+            templateUrl: '../views/queuePatients.html',
+            controller: 'QueuePatient'
+        })
         // .when('/', {
         //     templateUrl: '../views/viewQuestionnaires.html',
         //     controller: 'viewQuestionCtrl'

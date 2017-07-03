@@ -1,0 +1,35 @@
+<div class="container">
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>HIN</th>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Civil Status</th>
+            <th>NIC</th>
+            <th>Phone</th>
+            <th>Address</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr ng-repeat = "patient in notaddpatientlist">
+            <td>{{patient.HIN}}</td>
+            <td>{{patient.name}}</td>
+            <td>{{patient.DOB}}</td>
+            <td>{{patient.gender}}</td>
+            <td>{{patient.civilStatus}}</td>
+            <td>{{patient.NIC}}</td>
+            <td>{{patient.phone}}</td>
+            <td>{{patient.address}}</td>
+
+            <td><a href="patientOverview"><button class="btn btn-info" ng-click="overview(patient._id)">ADD To QUEUE</button></a></td>
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>
