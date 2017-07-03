@@ -5,7 +5,7 @@
 
         // home page
         .when('/', {
-            templateUrl: '../index.html'
+            templateUrl: '../views/home.html'
         })
         .when('/home', {
             templateUrl: '../views/home.html',
@@ -23,6 +23,26 @@
             templateUrl: '../views/viewQuestionnaires.html',
             controller: 'viewQuestionCtrl'
         })
+        .when('/patient', {
+            templateUrl: '../views/Patientlist.html',
+            controller: 'patient'
+        })
+        .when('/patientOverview', {
+            templateUrl: '../views/patientOverview.html',
+            controller: 'patient'
+        })
+        // .when('/', {
+        //     templateUrl: '../views/viewQuestionnaires.html',
+        //     controller: 'viewQuestionCtrl'
+        // })
+        // .when('/', {
+        //     templateUrl: '../views/viewQuestionnaires.html',
+        //     controller: 'viewQuestionCtrl'
+        // })
+        // .when('/', {
+        //     templateUrl: '../views/viewQuestionnaires.html',
+        //     controller: 'viewQuestionCtrl'
+        // })
         .otherwise('/home', {
             templateUrl: '../views/home.html',
         });

@@ -26,14 +26,27 @@ addques.controller('viewQuestionCtrl',[ '$scope', '$http', function($scope, $htt
     // console.log("start : " + $scope.statdate + " end : " + $scope.enddate);
     $scope.search = function(){
     // var id = $scope.patient.HIN;
-    $http.get(backend + '/api/question').then(function(response) {
-        console.log("I got all the questions of pateient bla bla");
-        console.log(response.data);
-        $scope.questions = response.data;
-        
-    }, function (error) {
-        console.log("I could not get the questions of patient bla bla");
-    })
+    if($scope.patient.HIN == null)
+    {
+        $http.get(backend + '/api/question').then(function(response) {
+            console.log("I got all the questions of pateient bla bla");
+            console.log(response.data);
+            $scope.questions = response.data;
+            
+        }, function (error) {
+            console.log("I could not get the questions of patient bla bla");
+        })
+    }
+    else {
+        $http.get(backend + '/api/question/id='+$scope.patient.HIN).then(function(response) {
+            console.log("I got all the questions of selected pateient");
+            console.log(response.data);
+            $scope.questions = response.data;
+            
+        }, function (error) {
+            console.log("I could not get the questions of patient bla bla");
+        })
+    }
     }
 
 }]);
