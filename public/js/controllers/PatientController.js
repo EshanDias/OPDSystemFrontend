@@ -2,18 +2,18 @@ var patientModule = angular.module('PatientController', []);
 var backend = 'http://localhost:8000';
 
 patientModule.service('patientService', function() {
-    var patientID;
 
-    var setID = function(id) {
-        patientID = id;
+    var patientDetails;
+
+    var setPatientDetails = function(data) {
+        patientDetails = data;
     };
-
-    var getID = function() {
-        return patientID;
+    var getPatientDetails = function() {
+        return patientDetails;
     };
     return {
-        setID : setID,
-        getID : getID
+        setPatientDetails : setPatientDetails,
+        getPatientDetails : getPatientDetails 
     }; 
 });
 
@@ -23,14 +23,12 @@ patientModule.controller('patient', [ '$scope', '$http', 'patientService', funct
 
     $http.get(backend + '/HIS/patient').then(function (response) {
                 $scope.patientlist = response.data;
-                //$scope.patient = "";
     });
 
     var refresh = function () {
 
         $http.get(backend + '/HIS/patient').then(function (response) {
             $scope.patientlist = response.data;
-          //  $scope.patient = {};
         });
     };
 
@@ -64,21 +62,20 @@ patientModule.controller('patient', [ '$scope', '$http', 'patientService', funct
 
     $scope.searchByHin = function(hin){
         $http.get(backend + '/HIS/patient/' +hin).then(function (respose) {
-            // $scope.patientlist = {};
             $scope.patientlist = respose.data;
         })
     }
 
-    $scope.overview = function (id) {
-        patientService.setID(id);
+    $scope.overview = function (details) {
+        patientService.setPatientDetails(details);
     }
-
+    
 
 }]);
 
 patientModule.controller('patientOverview', ['$scope', '$http', 'patientService', function($scope, $http, patientService) {
 
-    var id = patientService.getID();
+    var id = patientService.getPatientDetails()._id;
 
     $http.get(backend + '/HIS/patients/' +id).then(function (response) {
             $scope.patientlist2 = [{name: response.data.name,  HIN: response.data.HIN, DOB: response.data.DOB, gender: response.data.gender, NIC: response.data.NIC, address: response.data.address, civilStatus: response.data.civilStatus, phone: response.data.phone }];
