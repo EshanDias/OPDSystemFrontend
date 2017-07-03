@@ -5,7 +5,7 @@
 
         // home page
         .when('/', {
-            templateUrl: '../index.html'
+            templateUrl: '../views/home.html'
         })
         .when('/home', {
             templateUrl: '../views/home.html',
@@ -22,6 +22,38 @@
         .when('/viewQuestionnaires', {
             templateUrl: '../views/viewQuestionnaires.html',
             controller: 'viewQuestionCtrl'
+        })
+        .when('/patient', {
+            templateUrl: '../views/Patientlist.html',
+            controller: 'patient'
+        })
+        .when('/patientOverview', {
+            templateUrl: '../views/patientOverview.html',
+            controller: 'patientOverview'
+        })
+        .when('/myQueue', {
+            templateUrl: '../views/myQueue.html',
+            controller: 'myQueue'
+        })
+        .when('/myOPD', {
+            templateUrl: '../views/myOPD.html',
+            controller: 'myOPD'
+        })
+        .when('/createVisit', {
+            templateUrl: '../views/createVisit.html',
+            controller: 'AppCtrl'
+        })
+        .when('/prescribeDrugs', {
+            templateUrl: '../views/drug.html',
+            controller: 'drugctrl'
+        })
+        .when('/addDrug', {
+            templateUrl: '../views/addDrug.html',
+            controller: ''
+        })
+        .when('/queuePatients', {
+            templateUrl: '../views/queuePatients.html',
+            controller: 'QueuePatient'
         })
         .otherwise('/home', {
             templateUrl: '../views/home.html',
