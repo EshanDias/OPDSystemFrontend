@@ -4,3 +4,4 @@
 /public/libs
 #node-components
 /node_modules
+*.iml
