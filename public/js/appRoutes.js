@@ -31,14 +31,14 @@
             templateUrl: '../views/patientOverview.html',
             controller: 'patientOverview'
         })
-        // .when('/', {
-        //     templateUrl: '../views/viewQuestionnaires.html',
-        //     controller: 'viewQuestionCtrl'
-        // })
-        // .when('/', {
-        //     templateUrl: '../views/viewQuestionnaires.html',
-        //     controller: 'viewQuestionCtrl'
-        // })
+        .when('/myQueue', {
+            templateUrl: '../views/myQueue.html',
+            controller: 'myQueue'
+        })
+        .when('/myOPD', {
+            templateUrl: '../views/myOPD.html',
+            controller: 'myOPD'
+        })
         // .when('/', {
         //     templateUrl: '../views/viewQuestionnaires.html',
         //     controller: 'viewQuestionCtrl'
