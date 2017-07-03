@@ -1,10 +1,21 @@
-var addques = angular.module('QuestionnairesCtrl', []);
+var questionnaires = angular.module('QuestionnairesCtrl', ['PatientController']); 
 var backend = 'http://localhost:8000';
 
-addques.controller('addQuestionCtrl',[ '$scope', '$http', function($scope, $http) {
+questionnaires.service('questionService', function(patientService) {
+
+    this.getPatientDetails = function() {
+        return patientService.getPatientDetails();
+    };
+});
+
+questionnaires.controller('addQuestionCtrl',[ '$scope', '$http', 'questionService', function($scope, $http, questionService) {
     console.log("controller works");
+    
+    console.log( questionService.getPatientDetails().HIN);
     $scope.patient = {
-        date : new Date()
+        date : new Date(),
+        HIN : questionService.getPatientDetails().HIN,
+        name : questionService.getPatientDetails().name
     };
     
     $scope.submit = function() {
@@ -19,10 +30,9 @@ addques.controller('addQuestionCtrl',[ '$scope', '$http', function($scope, $http
 
 }]);
 
-addques.controller('viewQuestionCtrl',[ '$scope', '$http', function($scope, $http) {
+questionnaires.controller('viewQuestionCtrl',[ '$scope', '$http', function($scope, $http) {
 
     $scope.questions = [];
-
     // console.log("start : " + $scope.statdate + " end : " + $scope.enddate);
     $scope.search = function(){
     // var id = $scope.patient.HIN;
