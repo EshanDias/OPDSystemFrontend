@@ -29,7 +29,7 @@
         })
         .when('/patientOverview', {
             templateUrl: '../views/patientOverview.html',
-            controller: 'patient'
+            controller: 'patientOverview'
         })
         // .when('/', {
         //     templateUrl: '../views/viewQuestionnaires.html',

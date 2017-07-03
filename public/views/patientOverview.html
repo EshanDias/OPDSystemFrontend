@@ -10,46 +10,46 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="container" ng-controller="patient">
+                            <div class="container">
                                 <div class="row">
                                     <div class="col-lg-6" style="width:500px ; margin-right:5px">
                                         <div class="well well-sm">
 
                                             <div class="row">
 
-                                                <div class="col-md-6"  ng-repeat = "patients in patientlist">
-                                                    <h4><b>{{patients.name}}</p></b></h4>
+                                                <div class="col-md-6"  ng-repeat = "p in patientlist2">
+                                                    <h4><b>{{p.name}}</p></b></h4>
                                                     <table>
                                                         <tr>
                                                             <td style="padding-right: 40px"><strong>HIN</strong></td>
                                                             <td style="padding-left: 10px">:</td>
-                                                            <td style="padding-left: 10px">{{patients.HIN}}</td>
+                                                            <td style="padding-left: 10px">{{p.HIN}}</td>
                                                         </tr>
                                                         <tr>
                                                             <td><strong>Gender</strong></td>
-                                                            <td style="padding-left: 10px">{{patients.gender}}</td>
+                                                            <td style="padding-left: 10px">{{p.gender}}</td>
                                                         </tr>
                                                         <tr>
                                                             <td style="width: 90px"><strong>Civil Status</strong></td>
-                                                            <td style="padding-left: 10px">{{patients.civilStatus}}</td>
+                                                            <td style="padding-left: 10px">{{p.civilStatus}}</td>
                                                         </tr>
                                                         <tr>
                                                             <td style="width: 50px"><strong>Date of Birth</strong></td>
-                                                            <td style="padding-left: 10px">{{patients.DOB}}</td>
+                                                            <td style="padding-left: 10px">{{p.DOB}}</td>
                                                         </tr>
                                                         <tr>
                                                             <td><strong>Phone </strong></td>
-                                                            <td style="padding-left: 10px">{{patients.phone}}</td>
+                                                            <td style="padding-left: 10px">{{p.phone}}</td>
                                                         </tr>
                                                         <tr>
                                                             <td><strong>Address </strong></td>
-                                                            <td style="padding-left: 10px">{{patients.address}}</td>
+                                                            <td style="padding-left: 10px">{{p.address}}</td>
                                                         </tr>
                                                         <tr style="padding-top: 40px">
                                                             <td><strong>NIC</strong></td>
                                                             <td style="padding-left: 25px ">
                                                                 <font color="red">
-                                                                    <font color="red">{{patients.NIC}}</font>
+                                                                    <font color="red">{{p.NIC}}</font>
                                                                 </font>
                                                             </td>
                                                         </tr>
@@ -63,37 +63,30 @@
                         </div>
 
                         <div class="col-md-4" >
-                                                <div class="box box-solid box-default collapsed-box">
-
-                                                        <div class="box-body" align="right">
-                                                            <table class="table table-bordered table-striped table-hover" id="tabletestp">
-                                                                <br>
-
-                                                                    <tbody>
-                                        <tr>
+                            <div class="box box-solid box-default collapsed-box">
+                                <div class="box-body" align="right">
+                                    <table class="table table-bordered table-striped table-hover" id="tabletestp"><br>
+                                    <tbody>
+                                    <tr>
                                         <td><button>ADD ALLERGY</button></td>
                                         <td></td>
                                         <td><button>ADD VISIT</button></td>
-
-                                        </tr>
-                                        <tr>
+                                     </tr>
+                                    <tr>
                                         <td><button>ADD EXAMINATION</button></td>
                                         <td></td>
                                         <td><button>QUSTIONNAIRES</button></td>
-                                        
-                                        </tr>
-                                        <tr>
+                                    </tr>
+                                    <tr>
                                         <td></td>
                                         <td><button>LAB ORDERS</button></td>
                                         <td></td>
-
-                                        </tr>
-                                                                    </tbody>
-                                                            </table>
-                                                        </div>
-                                                </div>
-                                            </div>
-
+                                    </tr>
+                                    </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

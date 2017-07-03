@@ -1,7 +1,23 @@
 var patientModule = angular.module('PatientController', []);
 var backend = 'http://localhost:8000';
-//var id;
-patientModule.controller('patient', [ '$scope', '$http', function($scope, $http) {
+
+patientModule.service('patientService', function() {
+    var patientID;
+
+    var setID = function(id) {
+        patientID = id;
+    };
+
+    var getID = function() {
+        return patientID;
+    };
+    return {
+        setID : setID,
+        getID : getID
+    }; 
+});
+
+patientModule.controller('patient', [ '$scope', '$http', 'patientService', function($scope, $http, patientService) {
     console.log('works');
     $scope.patientlist = [];
 
@@ -54,36 +70,22 @@ patientModule.controller('patient', [ '$scope', '$http', function($scope, $http)
     }
 
     $scope.overview = function (id) {
-        console.log(id);
-  //      this.id = id;
-        $http.get(backend + '/HIS/patients/' +id).then(function (response) {
-            console.log(response.data);
-            $scope.patientlist = response;
-            console.log(response.data._id);
-        })
+        
+        patientService.setID(id);
+        
     }
-
-
 
 
 }]);
 
-// patientModule.service('myservice', function() {
-//       this.xxx = "yyy";
-//     });
+patientModule.controller('patientOverview', ['$scope', '$http', 'patientService', function($scope, $http, patientService) {
 
-// patientModule.controller('patientOverview', [ '$scope', '$http', function($scope, $http) {
-
-//     $scope.patientlist = [];
+    var id = patientService.getID();
     
-//     $scope.overview = function (id) {
-//         console.log(id);
-//         $http.get(backend + '/HIS/patients/' +id).then(function (response) {
-//             console.log(response.data);
-//             $scope.patientlist = response;
-//             console.log(response.data._id);
-//         })
-//     }
 
+    $http.get(backend + '/HIS/patients/' +id).then(function (response) {
+            $scope.patientlist2 = [{name: response.data.name,  HIN: response.data.HIN, DOB: response.data.DOB, gender: response.data.gender, NIC: response.data.NIC, address: response.data.address, civilStatus: response.data.civilStatus, phone: response.data.phone }];
+            console.log(response.data);
+    });
 
-// }]);
+}]);
