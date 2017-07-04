@@ -1,47 +1,46 @@
-<section class="content">
+
+<section class="content" >
     <div class="row">
         <!-- left column -->
-        <div class="col-md-12">
+        <div class="col-md-12" >
             <section class="content-header">
                 <h1>
                     New Visits
                 </h1>
                 <div class="col-md-9">
-                    <h4><small><b>Mr. sankalpaaa </b> / Male / 28Yrs -4Mths -27Dys /
-                        Single /
-                        Colombo, Western Province, Sri Lanka   </small></h4></div>
-                <div class="col-md-3" align="right"><h4><small>null</small></h4></div>
+                    <h4><small><b>{{patient.HIN}}/{{patient.name}}</b></small></h4></div>
+                <div class="col-md-3" align="right"></div>
                 <br>
                 <br>
             </section>
 
-            <div class="box box-default">
+            <div class="box box-default" >
                 <div class="box-header">
                     <h3 class="box-title">Patient Visits</h3>
                 </div>
 
                 <form>
-                    <div class="box-body" ng-controller='AppCtrl'>
+                    <div class="box-body"  >
                         <br>
-                        <div class="row">
+                        <div class="row" >
                             <div class="col-xs-6">
-                                <div class="input-group">
+                                <div class="input-group" >
 
                                     <span class="input-group-addon">Complaints/Injury *</span>
-                                    <input type="text" class="form-control ui-widget" id="inputInjury" name="Injury" ng-model="contact.type"
+                                    <input type="text" class="form-control ui-widget" id="inputInjury" name="Injury" ng-model="patient.v"
                                            required/>
 
-
+                                </div>
                                 </div>
                             </div>
                         </div>
                         <br>
                         <div class="row" >
                             <div class="col-xs-6">
-                                <div class="input-group">
+                                <div class="input-group" align="center" >
 
                                     <span class="input-group-addon">Visit Type *</span><select
-                                        class="form-control" name="VisitType" ng-model="contact.type" required>
+                                        class="form-control" name="VisitType" ng-model="patient.type" required>
                                     <option
                                             value="OPD">OPD</option>
                                     <option
@@ -61,7 +60,7 @@
 
                                     <span class="input-group-addon">Date and Time</span> <input
                                         class="form-control" type="text" id="inputDateandTime"
-                                        name="DateandTime" placeholder="" ng-model="contact.date"
+                                        name="DateandTime" placeholder="" ng-model="patient.date"
                                         />
                                 </div>
                             </div>
@@ -73,7 +72,7 @@
 
                                     <span class="input-group-addon">Doctor</span><input
                                         class="form-control" type="text" id="inputDoctor"
-                                        name="Doctor" placeholder="" ng-model="contact.doctor"
+                                        name="Doctor" placeholder="" ng-model="patient.doctor"
                                         required/>
                                 </div>
                             </div>
@@ -84,9 +83,13 @@
                         <div class="row">
                             <div class="col-xs-6">
                                 <div class="input-group">
-                                    <button type="submit" class="btn btn-primary" ng-click="addContact()">Create</button>
+                                    <button type="submit" class="btn btn-primary" ng-click="addpatient()">Create</button>
                                     <!--<button type="reset" class='btn' onclick="history.go(-1);">Cancel</button>-->
-                </form>							</div>
+                                </div>
+                                </div>
+                            </div>
+                </form>
+
         </div>
     </div>
     </div>
@@ -96,16 +99,5 @@
 
 </section>
 
-<script>
-    function getDate(){
-        var todaydate = new Date();
-        var day = todaydate.getDate();
-        var month = todaydate.getMonth() + 1;
-        var year = todaydate.getFullYear();
-        var datestring = day + "/" + month + "/" + year;
-        document.getElementById("inputDateandTime").value = datestring; //don't need ()
-    }
 
-    document.getElementById("inputDateandTime").onload = getDate();
-</script>
 

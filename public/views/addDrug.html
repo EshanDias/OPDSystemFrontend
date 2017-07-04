@@ -7,7 +7,7 @@
         <small> Patient Information</small>
     </h1>
 </section>
-</br>
+</br></div>
 
 <!-- Main content -->
 <section class="content">
@@ -18,7 +18,7 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-lg-10" style="width:1000px margin-right:5px">
+                    <div class="col-lg-10" style="width:1000px; margin-right:5px">
                         <div class="well well-sm">
                             <div class="row">
                                 <div class="col-md-3">
@@ -83,12 +83,12 @@
                                 </div>
                                 <div class="col-md-4">
 
-                                    <div class="btn-group pull-right">
-                                        <a href="http://his.sliit.lk/OPD/index.php/patient_c/edit/51" class="btn-xs btn-primary pull-right"> <i class="fa fa-edit"></i> Edit
-                                        </a>
-                                        <br>
+                                    <!--<div class="btn-group pull-right">-->
+                                        <!--<a href="http://his.sliit.lk/OPD/index.php/patient_c/edit/51" class="btn-xs btn-primary pull-right"> <i class="fa fa-edit"></i> Edit-->
+                                        <!--</a>-->
+                                        <!--<br>-->
 
-                                    </div>
+                                    <!--</div>-->
                                     <h4>
                                         <br>
 
@@ -140,7 +140,7 @@
 </section>
 <!------------------------------------------------------------------------------------------------------------------------------>
 
-<div class="row" ng-controller='AppCtrl1'>
+<div class="row" ng-controller='drugListCtrl'>
     <div class="col-md-12">
         <!--Ending point of panel for prescription-->
         <div class="panel panel-primary">
@@ -149,132 +149,46 @@
                 <label id="presStatus"></label>
             </div>
             <div class="panel-body">
-                <div class="form-horizontal well" style="alignment-adjust: auto">
-                    <div class="form-horizontal" style="margin-bottom: 20px">
-                        <input type="text" id="pid" value="51" hidden>
-                        <table class="">
-                            <thead>
-                            <th style="padding-left: 70px">Drug</th>
-                            <th style="padding-left: 40px">Dosage</th>
-                            <th style="padding-left: 50px">Frequency</th>
-                            <th style="padding-left: 70px">Period</th>
-                            <th style="padding-left: 10px">
+                <div class="container" >
+                    <!--<h1> Patient Information</h1>-->
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Dosage</th>
+                            <th>frequency</th>
+                            <th>period</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="drug in druglist2">
+                            <td>{{drug.name}}</td>
+                            <td>{{drug.dose}}</td>
+                            <td>{{drug.frequency}}</td>
+                            <td>{{drug.period}}</td>
 
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-warning" style="margin-left: -5px; width :137px" data-toggle="modal" data-target="#myModal">
-                                    Refer BNF
-                                </button>
-                                <!--Starting point of index-->
-                    </div>
+                            <!--<td><button class = "btn btn-danger" ng-click="remove(contact._id)">Remove</button></td>-->
+                            <!--<td><button class = "btn btn-warning" ng-click="edit(contact._id)">Edit</button></td>-->
+
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-            <!--Ending of modal-->
-        </div>
-    </div>
-    <form action="http://his.sliit.lk/OPD/index.php/prescription_c/add_drug/51/5" method="post" accept-charset="utf-8" name="myform">
-        <input type="text" id="inputQty" name="inputQty" value="1" hidden>
-
-        </th>
-        </thead>
-        <tbody>
-        <tr>
-            <td>
-                <select style="width:200px;height: 180px" required id="inputDrug" name="inputDrug" class="form-control" multiple="multiple"  ng-model="contact1.inputDrug">
-                    <option value="Ampicillin 250mg">Ampicillin 250m</option>
-                    <option value="Afrin">Afrin</option>
-                    <option value="Axitretin 50mg">Axitretin 50mg</option>
-                    <option value="Captopril">Captopril</option>
-                    <option value="Codeine Phosphate injection">Codeine Phosphate injection</option>
-                    <option value="Enalapril">Enalapril</option>
-                    <option value="Metformin 50mg">Metformin 50mg</option>
-                    <option value="Methyldopa">Methyldopa</option>
-                    <option value="panadole">panadole</option>
-                    <option value="Pindole Tablet 5mg">Pindole Tablet 5mg</option>
-                    <option value=" Nifedipine Slow"> Nifedipine Slow</option>
-                </select>
-            </td>
-
-            <td style="padding-left: 10px">
-                <select class="form-control" style="height: 180px;width:100px" required id="inputDosage" name="inputDosage" multiple="multiple" ng-model="contact1.inputDosage">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3s</option>
-                    <option value=" 5">5</option>
-                    <option value="1/2">1/2</option>
-                    <option value="1/4">1/4</option>
-
-                </select>
-                <!--<input id="custom1" readonly="readonly" type="text" value="Custom" />-->
-            </td>
-
-            <td style="padding-left: 10px">
-                <select class="form-control" style="height: 180px;width:150px"  id="inputFrequency" name="frequency" multiple="multiple"  ng-model="contact1.inputFrequency">
-                    <option value="o.d.">o.d.</option>
-                    <option value="bid">bid</option>
-                    <option value="t.d.s.">t.d.s.s</option>
-                    <option value="5 Times a Day">5 Times a Day</option>
-                    <option value="8H">8H</option>
-                    <option value="6H">6H</option>
-                    <option value="mane">mane</option>
-                    <option value="89">89</option>
-                    <option value="noct.">noct.</option>
-
-                </select>
-                <!--<input id="custom2"  readonly="readonly"  type="text" value="Custom" />-->
-            </td>
-
-            <td style="padding-left: 10px">
-                <select id="period" style="height: 180px;width:150px" required name="period" class="form-control" multiple="multiple" ng-model="contact1.inputFrequency">
-                    <option value="For 1 day">For 1 day</option>
-                    <option value="For 2 days">For 2 days</option>
-                    <option value="For 4 days">For 4 days</option>
-                    <option value="For 5 days">For 5 days</option>
-                    <option value="For 1 week">For 1 week</option>
-                    <option value="For 2 weeks">For 2 weeks</option>
-                    <option value="For 3 weeks">For 3 weeks</option>
-                    <option value="For 1 month">For 1 month</option>
-                    <option value="For 3 months">For 3 months</option>
-                    <!--<option value="Custom" id="customentry3">Custom</option>-->
-                </select>
-                <!--<input id="custom3"  readonly="readonly"  type="text" value="Custom" />-->
-            </td>
-            <td style="padding-left:10px; padding-top :150px; width:135px">
-                <input class="glyphicon glyphicon-plus btn btn-primary" type="submit" ng-click="addDrug()" value="+Add">
-            </td>
-        </tr>
-        </tbody>
-        </table>
-        <!-- Modal for BNF button click -->
-    </form>
-</div>
-</div>
-</form>
-
-<div id="myModal2" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-sm">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Enter the Quantity for this drug</h4>
-            </div>
-            <div class="modal-body">
-                Quantity of drugs to prescribe:
-                <input class="form-control" style="width:200px" type="number" id="inputQty2" pattern="[0-9]+([\.|,][0-9]+)?" step="1" min="1" max="200" value="1" name="inputQty2" placeholder="">
-            </div>
 
         </div>
-
     </div>
-</div>
+        </div>
+    </div>
+
+
+
 
 
 <div class="span10">
 
     <div class="form-actions" style="margin-top:20px;">
         </form>
-        <form action="http://his.sliit.lk/OPD/index.php/prescription_c/discard/51/5" method="post" accept-charset="utf-8" name="drugform">
+        <form >
             <button style="margin-left: 20px;margin-bottom: 30px;margin-top: 10px" type="submit" style="margin-top: 10px" class="btn btn-primary">Discard</button>
         </form>
     </div>

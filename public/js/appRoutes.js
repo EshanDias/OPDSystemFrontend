@@ -49,7 +49,7 @@
         })
         .when('/addDrug', {
             templateUrl: '../views/addDrug.html',
-            controller: ''
+            controller: 'drug'
         })
         .when('/queuePatients', {
             templateUrl: '../views/queuePatients.html',
