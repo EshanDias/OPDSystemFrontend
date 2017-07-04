@@ -74,9 +74,10 @@ patientModule.controller('patient', [ '$scope', '$http', 'patientService', funct
 }]);
 
 patientModule.controller('patientOverview', ['$scope', '$http', 'patientService', function($scope, $http, patientService) {
-
+    // console.log(patientService.getPatientDetails());
     if (patientService.getPatientDetails() != null){
         var id = patientService.getPatientDetails()._id;
+        console.log("id "+id);
     }
 
     $http.get(backend + '/HIS/patients/' +id).then(function (response) {
