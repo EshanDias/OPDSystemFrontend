@@ -1,5 +1,5 @@
-var x = angular.module('myOPD',['PatientController']);
-x.controller('myOPD', function opd($scope, $http, PatientController) {
+var mpd = angular.module('myOPD',['PatientController']);
+mpd.controller('myOPD', function opd($scope, $http, PatientController) {
     
 	console.log("This is MyOPD");
 
@@ -42,4 +42,4 @@ x.controller('myOPD', function opd($scope, $http, PatientController) {
     };
 
 }
-)
+);

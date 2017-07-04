@@ -60,6 +60,10 @@
             templateUrl: '../views/addToQueue_patient.html',
             controller: 'AddQueuePatient'
         })
+        .when('/doctors', {
+            templateUrl: '../views/doctors.html',
+            controller: 'DoctorsListCtrl'
+        })
         .otherwise('/home', {
             templateUrl: '../views/home.html',
         });

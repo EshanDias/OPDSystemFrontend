@@ -1,7 +1,7 @@
-var x = angular.module('drugModule',['PatientController']);
+var drg = angular.module('drugModule',['PatientController']);
 var backend = 'http://localhost:8000';
 
-x.service('drugService', function(patientService) {
+drg.service('drugService', function(patientService) {
 
     this.getPatientDetails = function() {
         return patientService.getPatientDetails();
@@ -10,7 +10,7 @@ x.service('drugService', function(patientService) {
 
 
 
-x.service('dragService', function() {
+drg.service('dragService', function() {
 
     var patientDetails;
 
@@ -28,7 +28,7 @@ x.service('dragService', function() {
 
 
 
-x.controller('drugctrl', function AppCtrl($scope,$http,drugService,dragService){
+drg.controller('drugctrl', function AppCtrl($scope,$http,drugService,dragService){
 
     $scope.patient = [];
     $scope.patient = {
@@ -82,7 +82,7 @@ x.controller('drugctrl', function AppCtrl($scope,$http,drugService,dragService){
     }
 )
 
-x.controller('drug', ['$scope', '$http', 'dragService', function($scope, $http, dragService) {
+drg.controller('drug', ['$scope', '$http', 'dragService', function($scope, $http, dragService) {
 
     var id = dragService.getdrugDetails()._id;
 

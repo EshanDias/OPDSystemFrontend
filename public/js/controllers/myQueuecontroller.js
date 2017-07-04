@@ -1,8 +1,8 @@
 /**
  * Created by Pooja on 7/2/2017.
  */
-var x = angular.module('myQueue',[]);
-x.controller('myQueue', function myQueue($scope, $http) {
+var myq = angular.module('myQueue',[]);
+myq.controller('myQueue', function myQueue($scope, $http) {
     console.log("This is MyQueue");
 
     var refresh = function(){
