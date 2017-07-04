@@ -1,52 +1,45 @@
-<!DOCTYPE html>
-<html ng-app="AvailableDoctorList">
-	<head>
-		<meta charset="UTF-8">
-		<title>Available Doctor Queue</title>
 
-		<link rel="stylesheet" type="text/css" href="http://his.sliit.lk/OPD/public/bootstrap/css/bootstrap.min.css">
+<div class="container">
+	<h1>My Home</h1>
+	<div class="OPD">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>OPD</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
 	
-	</head>
-	<body ng-app="DoctorsList">
-		<div class="container" ng-controller="DoctorsListCtrl">
-			<h1>My Home</h1>
-			<div class="OPD">
-				<table class="table">
-					<thead>
-						<tr>
-							<th>OPD</th>
-							<th>&nbsp;</th>
-						</tr>
-					</thead>
-			
-					<tbody>
-						<tr ng-repeat = "doctor in OPDdoctorsList">
-							<td>{{doctor.name}}</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			
-			<div class="Clinic">
-				<table class="table">
-					<thead>
-						<tr>
-							<th>Clinic</th>
-							<th>&nbsp;</th>
-						</tr>
-					</thead>
-			
-					<tbody>
-						<tr ng-repeat = "doctor in CLINICdoctorList">
-							<td>{{doctor.name}}</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-   
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-		<script src="../controllers/myOPDcontroller.js"></script> 
-
-	</body>
-</html>
+			<tbody>
+				<!--<tr ng-repeat = "doctor in OPDdoctorsList">-->
+				<tr>
+					<!--<td>{{doctor.name}}</td>-->
+					<td><p>Dr. Wasantha</P></td>
+					<td>Dr. Jayasooriya</td>
+					<td>Dr. Naditha</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="Clinic">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Clinic</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+	
+			<tbody>
+				<!--<tr ng-repeat = "doctor in CLINICdoctorList">-->
+				<tr>
+					<!--<td>{{doctor.name}}</td>-->
+					<td>Dr. Madushanki</td>
+					<td>Dr. Dias</td>
+					<td>Dr. Shashi</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
