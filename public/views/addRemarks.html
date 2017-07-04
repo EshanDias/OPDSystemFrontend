@@ -5,13 +5,13 @@
         <tr>
             <td>Patient Name</td>
             <td> : </td>
-            <td><input type="text" disabled></td>
+            <td><input type="text" ng-model="patient.name" disabled></td>
         </tr>
         <tr>
             <td>Visit Type</td>
             <td> : </td>
             <td>
-                <select>
+                <select ng-model="patient.visitType" >
                     <option value="OPD">OPD</option>
                     <option value="clinic">Clinic</option>
                 </select>
@@ -20,9 +20,9 @@
         <tr>
             <td>Remarks</td>
             <td> : </td>
-            <td><textarea rows="5"></textarea></td>
+            <td><textarea rows="5" ng-model="patient.remarks" > </textarea></td>
         </tr>
 
     </table>
-    <input class="submit-button" type="submit" value="Add Remarks">
+    <input class="submit-button" type="submit" value="Add Remarks" ng-click="addRemaks(patient)">
 </div>

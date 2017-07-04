@@ -13,7 +13,7 @@
         })
         .when('/addRemarks', {
             templateUrl: '../views/addRemarks.html',
-            controller: 'MainController'
+            controller: 'addRemarksCtrl'
         })
         .when('/addQuestionnaires', {
             templateUrl: '../views/addQuestionnaires.html',
