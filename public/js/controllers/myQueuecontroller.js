@@ -2,18 +2,18 @@
  * Created by Pooja on 7/2/2017.
  */
 var myq = angular.module('myQueue',[]);
+var backend = 'http://localhost:8000';
+
 myq.controller('myQueue', function myQueue($scope, $http) {
     console.log("This is MyQueue");
 
     var refresh = function(){
-        var id = "595b06d32a8dbd1d6e378640";
+        var id = "595b318741c2c128ec8cd393";
 
-        console.log("refresh function");
-
-        $http.get('/doctor/' +id).then(function(response){
-            console.log("controller received data");
-            console.log(response);
-            console.log(response.data.availability);
+        $http.get(backend + '/doctor/' +id).then(function(response){
+            // console.log("controller received data");
+            console.log(response.data);
+            // console.log(response.data.availability);
 
             $scope.doctor = response.data;
 
@@ -26,9 +26,9 @@ myq.controller('myQueue', function myQueue($scope, $http) {
 
         });
 
-        $http.get('/doctorQueue/'+id).then(function(response){
-            $scope.patientCount = response.data.PQueue.length;
-            console.log($scope.patientCount);
+        $http.get(backend + '/doctorQueue/'+id).then(function(response){
+            //$scope.patientCount = response.data.PQueue.length;
+            //console.log($scope.patientCount);
 
 
         });
@@ -40,7 +40,7 @@ myq.controller('myQueue', function myQueue($scope, $http) {
     //set status as On Hold when button clicked
     $scope.holdQueue = function(id){
         var id = "595b06d32a8dbd1d6e378640";
-        $http.put('/doctors/' +id+ '/hold').then(function(response){
+        $http.put(backend + '/doctors/' +id+ '/hold').then(function(response){
 
 
             console.log("holded");
@@ -54,7 +54,7 @@ myq.controller('myQueue', function myQueue($scope, $http) {
     //set status as Open when button clicked
     $scope.resumeQueue = function(id){
         var id = "595b06d32a8dbd1d6e378640";
-        $http.put('/doctors/' +id+ '/resume').then(function(response){
+        $http.put(backend + '/doctors/' +id+ '/resume').then(function(response){
 
             //$scope.status = 'Open';
             console.log("resumed");

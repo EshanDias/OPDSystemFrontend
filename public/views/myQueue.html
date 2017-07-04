@@ -11,11 +11,7 @@
 						<td> : </td>
 						<td>{{doctor.name}}</td>
 					</tr>
-					<tr>
-						<td># of Patients </td>
-						<td> : </td>
-						<td>{{patientCount}}</td>
-					</tr>
+
 					<tr>
 						<td>Queue Status </td>
 						<td> : </td>
@@ -44,28 +40,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="queueOrder">
-		<h3 class="order-title">Queue Order</h3>
-		<div class="order">
-			<table class="table queueOrder">
-				<tbody>
 
-				<tr>
-					<td>Patient ID </td>
-					<td> : </td>
-					<td>{{patientID}}</td>
-				</tr>
-				<tr>
-					<td>Queue Number </td>
-					<td> : </td>
-					<td>{{queueNumber}}</td>
-				</tr>
-
-				</tbody>
-			</table>
-		</div>
-
-	</div>
     <div class="col-md-2" style="height:5px">
         <a href="myOPD">
             <button class="btn btn-block btn-primary" ng-click="opd(doctor.name)" value="My OPD">My OPD</button>

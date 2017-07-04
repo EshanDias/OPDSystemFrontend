@@ -1,5 +1,7 @@
 var mpd = angular.module('myOPD',['PatientController']);
-mpd.controller('myOPD', function opd($scope, $http, PatientController) {
+var backend = 'http://localhost:8000';
+
+mpd.controller('myOPD', function opd($scope, $http, patientService) {
     
 	console.log("This is MyOPD");
 
@@ -7,9 +9,7 @@ mpd.controller('myOPD', function opd($scope, $http, PatientController) {
 
         var DoctorName = "Rasitha Ekanayake";
 
-        $http.get('/myPatients/' +DoctorName).then(function(response){
-            console.log("controller received data");
-            console.log(response.data);
+        $http.get(backend + '/myPatients/' +DoctorName).then(function(response){
             //$scope.patientList = "";
             //refresh();
             $scope.patientList = response.data;
@@ -20,26 +20,33 @@ mpd.controller('myOPD', function opd($scope, $http, PatientController) {
 
     //go to patient overview
     $scope.view = function(data){
-        PatientController.setPatientDetails(data);
-        console.log("controller got the patient hin");
-        console.log(id);
-        $http.get('/patient/' +id).then(function(response){
-            console.log("controller received data");
+        var details =[];
+        var hin = data.HIN;
+
+        $http.get(backend + '/patientOverview/' +hin).then(function (response) {
             console.log(response);
-            //$scope.patientList = "";
-            //refresh();
-            $scope.patient = response;
-        });
+            details = [{name: response.data.name,  HIN: response.data.HIN, DOB: response.data.DOB, gender: response.data.gender, NIC: response.data.NIC, address: response.data.address, civilStatus: response.data.civilStatus, phone: response.data.phone }];
+            // console.log(details);
+    });
+
+        patientService.setPatientDetails(details);
+        // $http.get(backend + '/patient/' +id).then(function(response){
+        //     console.log("controller received data");
+        //     console.log(response);
+        //     //$scope.patientList = "";
+        //     //refresh();
+        //     $scope.patient = response;
+        // });
 
     };
 
     $scope.search = function(HIN){
         console.log("clicked");
-        $http.get('/patients/' +HIN).then(function (response) {
+        $http.get(backend + '/patients/' +HIN).then(function (response) {
 
             $scope.patientList = response.data;
         });
     };
 
 }
-);
+)
