@@ -30,33 +30,34 @@ questionnaires.controller('addQuestionCtrl',[ '$scope', '$http', 'questionServic
 
 }]);
 
-questionnaires.controller('viewQuestionCtrl',[ '$scope', '$http', function($scope, $http) {
+questionnaires.controller('viewQuestionCtrl',[ '$scope', '$http', 'questionService', function($scope, $http, questionService) {
 
     $scope.questions = [];
-    // console.log("start : " + $scope.statdate + " end : " + $scope.enddate);
-    $scope.search = function(){
-    // var id = $scope.patient.HIN;
-    if($scope.patient.HIN == null)
-    {
-        $http.get(backend + '/api/question').then(function(response) {
-            console.log("I got all the questions of pateient bla bla");
-            console.log(response.data);
-            $scope.questions = response.data;
-            
-        }, function (error) {
-            console.log("I could not get the questions of patient bla bla");
-        })
-    }
-    else {
-        $http.get(backend + '/api/question/id='+$scope.patient.HIN).then(function(response) {
-            console.log("I got all the questions of selected pateient");
-            console.log(response.data);
-            $scope.questions = response.data;
-            
-        }, function (error) {
-            console.log("I could not get the questions of patient bla bla");
-        })
-    }
-    }
+    
+    $scope.patient = {
+        name : questionService.getPatientDetails().name,
+        HIN : questionService.getPatientDetails().HIN
+    };
+    
+    $http.get(backend + '/api/question'+questionService.getPatientDetails().HIN).then(function(response) {
+        $scope.questions = response.data;
+        
+    }, function (error) {
+        console.log(error);
+    });
+    
 
+}]);
+
+questionnaires.controller('addRemarksCtrl', ['$scope', '$http', 'questionService', function($scope, $http, questionService) {
+    $scope.patient = questionService.getPatientDetails();
+    $scope.addRemarks = function() {
+
+        $http.put(backend + '/api/addRemarks', $scope.patient).then(function(data) {
+            console.log("remarks added");
+        }, function(data) {
+            console.log("Error in posting");
+        })
+
+    }
 }]);

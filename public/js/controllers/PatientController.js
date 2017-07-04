@@ -75,7 +75,9 @@ patientModule.controller('patient', [ '$scope', '$http', 'patientService', funct
 
 patientModule.controller('patientOverview', ['$scope', '$http', 'patientService', function($scope, $http, patientService) {
 
-    var id = patientService.getPatientDetails()._id;
+    if (patientService.getPatientDetails() != null){
+        var id = patientService.getPatientDetails()._id;
+    }
 
     $http.get(backend + '/HIS/patients/' +id).then(function (response) {
             $scope.patientlist2 = [{name: response.data.name,  HIN: response.data.HIN, DOB: response.data.DOB, gender: response.data.gender, NIC: response.data.NIC, address: response.data.address, civilStatus: response.data.civilStatus, phone: response.data.phone }];
