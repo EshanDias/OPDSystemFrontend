@@ -6,7 +6,7 @@ x.controller('myQueue', function myQueue($scope, $http) {
     console.log("This is MyQueue");
 
     var refresh = function(){
-        var id = "5958a52381a0a71a6c7017d2";
+        var id = "595b06d32a8dbd1d6e378640";
 
         console.log("refresh function");
 
@@ -27,12 +27,11 @@ x.controller('myQueue', function myQueue($scope, $http) {
         });
 
         $http.get('/doctorQueue/'+id).then(function(response){
-            $scope.patientCount= response.data.PQueue.length;
+            $scope.patientCount = response.data.PQueue.length;
+            console.log($scope.patientCount);
+
 
         });
-
-
-
 
     };
 
@@ -40,7 +39,7 @@ x.controller('myQueue', function myQueue($scope, $http) {
 
     //set status as On Hold when button clicked
     $scope.holdQueue = function(id){
-        var id = "5958a52381a0a71a6c7017d2";
+        var id = "595b06d32a8dbd1d6e378640";
         $http.put('/doctors/' +id+ '/hold').then(function(response){
 
 
@@ -54,7 +53,7 @@ x.controller('myQueue', function myQueue($scope, $http) {
 
     //set status as Open when button clicked
     $scope.resumeQueue = function(id){
-        var id = "5958a52381a0a71a6c7017d2";
+        var id = "595b06d32a8dbd1d6e378640";
         $http.put('/doctors/' +id+ '/resume').then(function(response){
 
             //$scope.status = 'Open';

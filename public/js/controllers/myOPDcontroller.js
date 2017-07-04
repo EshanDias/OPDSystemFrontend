@@ -1,11 +1,11 @@
-var x = angular.module('myOPD',[]);
-x.controller('myOPD', function opd($scope, $http) {
+var x = angular.module('myOPD',['PatientController']);
+x.controller('myOPD', function opd($scope, $http, PatientController) {
     
 	console.log("This is MyOPD");
 
 	var refresh = function(){
 
-        var DoctorName = "John";
+        var DoctorName = "Rasitha Ekanayake";
 
         $http.get('/myPatients/' +DoctorName).then(function(response){
             console.log("controller received data");
@@ -19,7 +19,8 @@ x.controller('myOPD', function opd($scope, $http) {
 	refresh();
 
     //go to patient overview
-    $scope.view = function(id){
+    $scope.view = function(data){
+        PatientController.setPatientDetails(data);
         console.log("controller got the patient hin");
         console.log(id);
         $http.get('/patient/' +id).then(function(response){
