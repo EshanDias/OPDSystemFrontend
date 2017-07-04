@@ -52,8 +52,13 @@
             controller: ''
         })
         .when('/queuePatients', {
-            templateUrl: '../views/queuePatients.html',
-            controller: 'QueuePatient'
+        templateUrl: '../views/queuePatients.html',
+        controller: 'QueuePatient'
+        })
+
+        .when('/addToQueue_patient', {
+            templateUrl: '../views/addToQueue_patient.html',
+            controller: 'AddQueuePatient'
         })
         .otherwise('/home', {
             templateUrl: '../views/home.html',
