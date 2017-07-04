@@ -17,7 +17,7 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-lg-10" style="width:1000px; margin-right:5px">
+                    <div class="col-lg-10" style="width:1000px margin-right:5px">
                         <div class="well well-sm">
                             <div class="row">
                                 <div class="col-md-3">
@@ -167,15 +167,13 @@
                             <th style="padding-left: 40px">Dosage</th>
                             <th style="padding-left: 50px">Frequency</th>
                             <th style="padding-left: 70px">Period</th>
-                            </thead>
-                            </table>
+                            <th style="padding-left: 10px">
 
                                 <!-- Button trigger modal -->
                                 <!--<button type="button" class="btn btn-warning" style="margin-left: -5px; width :137px" data-toggle="modal" data-target="#myModal">-->
                                     <!--Refer BNF-->
                                 <!--</button>-->
                                 <!--Starting point of index-->
-
                     </div>
                 </div>
             </div>
@@ -188,7 +186,7 @@
         </th>
         </thead>
         <tdiv>
-        <td>
+        <tr>
             <td>
                 <select style="width:200px;height: 180px" required id="inputDrug" name="inputDrug" class="form-control" multiple="multiple"  ng-model="drug.inputDrug">
                     <option value="Ampicillin 250mg">Ampicillin 250m</option>
@@ -250,10 +248,8 @@
                 <!--<input id="custom3"  readonly="readonly"  type="text" value="Custom" />-->
             </td>
             <td style="padding-left:10px; padding-top :150px; width:135px">
-                <a href="/addDrug" ><input class="glyphicon glyphicon-plus btn btn-primary" type="submit" ng-click="addDrug()" value="+Add"> </a>
+                <a href="/addDrug" ><input class="glyphicon glyphicon-plus btn btn-primary" type="submit" ng-click="addDrug()" value="+Add"> <a>
             </td>
-
-
         </tr>
         </tdiv>
         </table>
